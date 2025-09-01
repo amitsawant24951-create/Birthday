@@ -3,116 +3,111 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Happy Birthday Vibha! - Powerpuff Girls Theme 🎉</title>
+<title>Powerpuff Girls Birthday Theme</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-
-  * {
-    box-sizing: border-box;
-  }
-
   body {
     margin: 0;
-    background: linear-gradient(135deg, #ff6f91 0%, #ff9671 50%, #ffc75f 100%);
-    font-family: 'Luckiest Guy', cursive, sans-serif;
+    background: linear-gradient(135deg, #ff6f91, #ffc75f);
+    font-family: 'Arial Black', Gadget, sans-serif;
     color: #222;
-    overflow-x: hidden;
-  }
-
-  header {
     text-align: center;
-    padding: 2rem 1rem 1rem;
-    color: white;
-    text-shadow: 2px 2px 5px #8b0000;
+    overflow-x: hidden;
+    padding: 2rem;
   }
 
-  header h1 {
-    font-size: 3.5rem;
-    margin: 0;
+  h1 {
+    color: #d6336c;
+    margin-bottom: 0.3em;
   }
 
-  header p {
-    font-size: 1.5rem;
-    margin-top: 0.3rem;
-    font-weight: 700;
-  }
-
-  /* Animated Powerpuff SVG container */
+  /* Container for the Powerpuff Girls */
   .ppg-container {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 40px;
     margin-bottom: 2rem;
   }
 
-  .ppg-svg {
-    width: 150px;
-    height: 150px;
-    cursor: default;
-    animation: floatUpDown 4s ease-in-out infinite;
+  .ppg {
+    width: 140px;
+    height: 140px;
+    position: relative;
+    animation: floatUpDown 3s ease-in-out infinite;
   }
-  .ppg-svg:nth-child(2) {
-    animation-delay: 0.8s;
+  .ppg:nth-child(2) {
+    animation-delay: 1s;
   }
-  .ppg-svg:nth-child(3) {
-    animation-delay: 1.5s;
+  .ppg:nth-child(3) {
+    animation-delay: 2s;
   }
 
   /* Floating animation */
   @keyframes floatUpDown {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
   }
 
-  /* Blinking eyes */
-  .eye-blink {
-    animation: blink 6s infinite;
+  /* Big circle head */
+  .head {
+    fill: #f00;
+    stroke: #800000;
+    stroke-width: 4;
+  }
+  .blossom .head { fill: #ff6f91; stroke: #e05263; }
+  .bubbles .head { fill: #61dafb; stroke: #1eaedb; }
+  .buttercup .head { fill: #56ab2f; stroke: #3e6c21; }
+
+  /* Eyes */
+  .eye-white {
+    fill: white;
+  }
+  .eye-pupil {
+    fill: black;
     transform-origin: center;
+    animation: blink 5s infinite;
   }
-  .eye-blink.right {
-    animation-delay: 3s;
-  }
-  .eye-blink.left {
-    animation-delay: 0s;
+  .eye-pupil.right {
+    animation-delay: 2.5s;
   }
 
   @keyframes blink {
-    0%, 97%, 100% {
-      transform: scaleY(1);
-    }
-    98%, 99% {
-      transform: scaleY(0.1);
-    }
+    0%, 95%, 100% { transform: scaleY(1); }
+    96%, 98% { transform: scaleY(0.1); }
   }
 
-  /* Gallery */
+  /* Hair styles */
+  .blossom .hair {
+    fill: #e05263;
+  }
+  .bubbles .hair {
+    fill: #1eaedb;
+  }
+  .buttercup .hair {
+    fill: #3e6c21;
+  }
+
+  /* Gallery placeholder */
   .gallery {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
-    max-width: 960px;
-    margin: 0 auto 3rem;
+    gap: 12px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 2rem auto;
   }
-
   .gallery img {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     border-radius: 20px;
-    object-fit: cover;
     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    object-fit: cover;
     transition: transform 0.3s ease;
     cursor: pointer;
-    border: 6px solid white;
+    border: 5px solid white;
   }
-
   .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   }
 
   /* Message */
@@ -128,35 +123,21 @@
     font-weight: 600;
     line-height: 1.5;
     text-align: center;
-    font-family: 'Nunito', sans-serif;
-  }
-
-  .message span.emoji {
-    font-size: 1.6rem;
-  }
-
-  footer {
-    text-align: center;
-    padding: 1rem;
-    color: #d6336c;
-    font-weight: 700;
-    font-size: 1.1rem;
-    user-select: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   /* Balloons */
   .balloon {
     position: fixed;
-    bottom: -150px;
-    width: 50px;
-    height: 70px;
+    bottom: -100px;
+    width: 45px;
+    height: 65px;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    opacity: 0.85;
+    opacity: 0.9;
     animation-name: floatUp;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
   }
-
   .balloon::after {
     content: "";
     position: absolute;
@@ -185,109 +166,54 @@
   }
 
   /* Balloon colors and positions */
-  .balloon:nth-child(1) {
-    left: 8%;
-    background: #ff6f91;
-    color: #e05263;
-    animation-duration: 7s;
-    animation-delay: 0s;
-  }
-  .balloon:nth-child(2) {
-    left: 22%;
-    background: #61dafb;
-    color: #1eaedb;
-    animation-duration: 9s;
-    animation-delay: 2s;
-  }
-  .balloon:nth-child(3) {
-    left: 36%;
-    background: #56ab2f;
-    color: #3e6c21;
-    animation-duration: 8s;
-    animation-delay: 1.5s;
-  }
-  .balloon:nth-child(4) {
-    left: 58%;
-    background: #ff6f91;
-    color: #e05263;
-    animation-duration: 6.5s;
-    animation-delay: 3s;
-  }
-  .balloon:nth-child(5) {
-    left: 74%;
-    background: #61dafb;
-    color: #1eaedb;
-    animation-duration: 7.5s;
-    animation-delay: 1s;
-  }
-  .balloon:nth-child(6) {
-    left: 88%;
-    background: #56ab2f;
-    color: #3e6c21;
-    animation-duration: 7.8s;
-    animation-delay: 0.5s;
-  }
+  .balloon:nth-child(1) { left: 5%; background: #ff6f91; color: #e05263; animation-duration: 7s; animation-delay: 0s; }
+  .balloon:nth-child(2) { left: 20%; background: #61dafb; color: #1eaedb; animation-duration: 9s; animation-delay: 2s; }
+  .balloon:nth-child(3) { left: 35%; background: #56ab2f; color: #3e6c21; animation-duration: 8s; animation-delay: 1.5s; }
+  .balloon:nth-child(4) { left: 55%; background: #ff6f91; color: #e05263; animation-duration: 6.5s; animation-delay: 3s; }
+  .balloon:nth-child(5) { left: 75%; background: #61dafb; color: #1eaedb; animation-duration: 7.5s; animation-delay: 1s; }
+  .balloon:nth-child(6) { left: 90%; background: #56ab2f; color: #3e6c21; animation-duration: 7.8s; animation-delay: 0.5s; }
 
-  /* Flowers in Powerpuff colors */
+  /* Flowers */
   .flower {
     position: fixed;
     bottom: 10px;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: #ff6f91;
     box-shadow:
-      18px 0 #61dafb,
-      -18px 0 #61dafb,
-      0 18px #61dafb,
-      0 -18px #61dafb;
+      16px 0 #61dafb,
+      -16px 0 #61dafb,
+      0 16px #61dafb,
+      0 -16px #61dafb;
     animation: sway 4s ease-in-out infinite alternate;
   }
-  .flower:nth-child(7) {
-    left: 12%;
-    animation-delay: 0s;
-  }
-  .flower:nth-child(8) {
-    left: 33%;
-    animation-delay: 2s;
-  }
-  .flower:nth-child(9) {
-    left: 52%;
-    animation-delay: 1s;
-  }
-  .flower:nth-child(10) {
-    left: 70%;
-    animation-delay: 3s;
-  }
-  .flower:nth-child(11) {
-    left: 85%;
-    animation-delay: 2.5s;
-  }
+  .flower:nth-child(7) { left: 15%; animation-delay: 0s; }
+  .flower:nth-child(8) { left: 35%; animation-delay: 2s; }
+  .flower:nth-child(9) { left: 55%; animation-delay: 1s; }
+  .flower:nth-child(10) { left: 75%; animation-delay: 3s; }
+  .flower:nth-child(11) { left: 90%; animation-delay: 2.5s; }
 
   @keyframes sway {
-    0% {
-      transform: translateX(0) rotate(0deg);
-    }
-    100% {
-      transform: translateX(10px) rotate(10deg);
-    }
+    0% { transform: translateX(0) rotate(0deg); }
+    100% { transform: translateX(10px) rotate(10deg); }
   }
 
   /* Responsive */
   @media (max-width: 700px) {
     .ppg-container {
-      gap: 1rem;
+      gap: 20px;
     }
-    .ppg-svg {
-      width: 100px;
-      height: 100px;
+    .ppg {
+      width: 110px;
+      height: 110px;
     }
     .gallery img {
-      width: 140px;
-      height: 140px;
+      width: 130px;
+      height: 130px;
     }
     .message {
-      padding: 1.5rem 1.5rem;
+      padding: 1rem 1.5rem;
       font-size: 1rem;
     }
   }
@@ -295,54 +221,46 @@
 </head>
 <body>
 
-<header>
-  <h1>Happy Birthday, Vibha! 🎉</h1>
-  <p>From Your Powerpuff Partners-in-Crime 💖</p>
-</header>
+<h1>Happy Birthday, Vibha! 🎉</h1>
+<p>From your Powerpuff partners-in-crime 💖</p>
 
-<!-- Animated Powerpuff Girls SVGs -->
+<!-- Powerpuff Girls -->
 <div class="ppg-container" aria-label="Powerpuff Girls characters">
   <!-- Blossom -->
-  <svg class="ppg-svg" viewBox="0 0 200 200" aria-label="Blossom" role="img" xmlns="http://www.w3.org/2000/svg" >
-    <circle cx="100" cy="100" r="90" fill="#FF6F91" stroke="#E05263" stroke-width="8" />
+  <svg class="ppg blossom" viewBox="0 0 140 140" role="img" aria-label="Blossom">
+    <circle class="head" cx="70" cy="70" r="65"/>
     <!-- Hair bow -->
-    <polygon points="100,15 130,50 100,85 70,50" fill="#E05263" />
+    <polygon class="hair" points="70,10 100,45 70,80 40,45" />
     <!-- Eyes -->
-    <ellipse cx="65" cy="110" rx="25" ry="30" fill="white" />
-    <ellipse cx="135" cy="110" rx="25" ry="30" fill="white" />
-    <ellipse class="eye-blink left" cx="65" cy="110" rx="12" ry="16" fill="black" />
-    <ellipse class="eye-blink right" cx="135" cy="110" rx="12" ry="16" fill="black" />
-    <!-- Mouth -->
-    <path d="M70,140 Q100,170 130,140" stroke="#800020" stroke-width="5" fill="none" />
+    <ellipse class="eye-white" cx="40" cy="90" rx="20" ry="25"/>
+    <ellipse class="eye-white" cx="100" cy="90" rx="20" ry="25"/>
+    <ellipse class="eye-pupil left" cx="40" cy="90" rx="10" ry="15"/>
+    <ellipse class="eye-pupil right" cx="100" cy="90" rx="10" ry="15"/>
   </svg>
 
   <!-- Bubbles -->
-  <svg class="ppg-svg" viewBox="0 0 200 200" aria-label="Bubbles" role="img" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="100" cy="100" r="90" fill="#61DAFB" stroke="#1EAEDB" stroke-width="8" />
+  <svg class="ppg bubbles" viewBox="0 0 140 140" role="img" aria-label="Bubbles">
+    <circle class="head" cx="70" cy="70" r="65"/>
     <!-- Hair buns -->
-    <circle cx="55" cy="50" r="25" fill="#1EAEDB" />
-    <circle cx="145" cy="50" r="25" fill="#1EAEDB" />
+    <circle class="hair" cx="35" cy="35" r="20"/>
+    <circle class="hair" cx="105" cy="35" r="20"/>
     <!-- Eyes -->
-    <ellipse cx="65" cy="110" rx="25" ry="30" fill="white" />
-    <ellipse cx="135" cy="110" rx="25" ry="30" fill="white" />
-    <ellipse class="eye-blink left" cx="65" cy="110" rx="12" ry="16" fill="black" />
-    <ellipse class="eye-blink right" cx="135" cy="110" rx="12" ry="16" fill="black" />
-    <!-- Mouth -->
-    <path d="M70,140 Q100,160 130,140" stroke="#007EA7" stroke-width="4" fill="none" />
+    <ellipse class="eye-white" cx="40" cy="90" rx="20" ry="25"/>
+    <ellipse class="eye-white" cx="100" cy="90" rx="20" ry="25"/>
+    <ellipse class="eye-pupil left" cx="40" cy="90" rx="10" ry="15"/>
+    <ellipse class="eye-pupil right" cx="100" cy="90" rx="10" ry="15"/>
   </svg>
 
   <!-- Buttercup -->
-  <svg class="ppg-svg" viewBox="0 0 200 200" aria-label="Buttercup" role="img" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="100" cy="100" r="90" fill="#56AB2F" stroke="#3E6C21" stroke-width="8" />
+  <svg class="ppg buttercup" viewBox="0 0 140 140" role="img" aria-label="Buttercup">
+    <circle class="head" cx="70" cy="70" r="65"/>
     <!-- Hair spikes -->
-    <polygon points="50,40 90,30 130,40 140,70 120,100 160,130 140,150 100,140 60,150 40,130 50,100 20,70" fill="#3E6C21" />
+    <polygon class="hair" points="35,35 75,25 115,35 125,65 105,95 135,120 115,130 70,125 30,130 15,115 25,90 0,65" />
     <!-- Eyes -->
-    <ellipse cx="65" cy="110" rx="25" ry="30" fill="white" />
-    <ellipse cx="135" cy="110" rx="25" ry="30" fill="white" />
-    <ellipse class="eye-blink left" cx="65" cy="110" rx="12" ry="16" fill="black" />
-    <ellipse class="eye-blink right" cx="135" cy="110" rx="12" ry="16" fill="black" />
-    <!-- Mouth -->
-    <path d="M70,140 Q100,150 130,140" stroke="#2C4410" stroke-width="5" fill="none" />
+    <ellipse class="eye-white" cx="40" cy="90" rx="20" ry="25"/>
+    <ellipse class="eye-white" cx="100" cy="90" rx="20" ry="25"/>
+    <ellipse class="eye-pupil left" cx="40" cy="90" rx="10" ry="15"/>
+    <ellipse class="eye-pupil right" cx="100" cy="90" rx="10" ry="15"/>
   </svg>
 </div>
 
@@ -355,20 +273,16 @@
   <img src="https://raw.githubusercontent.com/amitsawant24951-create/Birthday/main/pic7.jpg.jpeg" alt="Picture 5" />
 </div>
 
-<!-- Message -->
+<!-- Heartfelt Message -->
 <section class="message" aria-label="Heartfelt birthday message">
   <p>
     From the two of us, and now I tried to sneak into your group, your crazy partners-in-crime.<br><br>
-    We just want you to know how much you mean to us! <span class="emoji">🥳💖</span><br><br>
-    You’re the funniest, cutest, and most full-of-life friend we could ever ask for. May your day be filled with laughter, cake, and endless joy (and maybe a little bit of trouble <span class="emoji">😉</span>).<br><br>
-    Keep shining, keep smiling, and keep enjoying life just the way you do. We love you, Vibha! <span class="emoji">💕✨</span><br><br>
-    - With love, Your 3 Besties <span class="emoji">💌</span>
+    We just want you to know how much you mean to us! 🥳💖<br><br>
+    You’re the funniest, cutest, and most full-of-life friend we could ever ask for. May your day be filled with laughter, cake, and endless joy (and maybe a little bit of trouble 😉).<br><br>
+    Keep shining, keep smiling, and keep enjoying life just the way you do. We love you, Vibha! 💕✨<br><br>
+    - With love, Your 3 Besties 💌
   </p>
 </section>
-
-<footer>
-  Made with ❤️ and superpowers for Vibha’s special day!
-</footer>
 
 <!-- Balloons -->
 <div class="balloon"></div>
