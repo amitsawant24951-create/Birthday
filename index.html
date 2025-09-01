@@ -19,6 +19,12 @@
     color: #d6336c;
     margin-bottom: 0.3em;
   }
+  p.subtitle {
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #d6336c;
+  }
 
   /* Container for the Powerpuff Girls */
   .ppg-container {
@@ -32,13 +38,22 @@
     width: 140px;
     height: 140px;
     position: relative;
-    animation: floatUpDown 3s ease-in-out infinite;
+    animation: floatUpDown 4s ease-in-out infinite;
   }
   .ppg:nth-child(2) {
-    animation-delay: 1s;
+    animation-delay: 1.3s;
   }
   .ppg:nth-child(3) {
-    animation-delay: 2s;
+    animation-delay: 2.7s;
+  }
+  .ppg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    background: white;
   }
 
   /* Floating animation */
@@ -47,46 +62,7 @@
     50% { transform: translateY(-20px); }
   }
 
-  /* Big circle head */
-  .head {
-    fill: #f00;
-    stroke: #800000;
-    stroke-width: 4;
-  }
-  .blossom .head { fill: #ff6f91; stroke: #e05263; }
-  .bubbles .head { fill: #61dafb; stroke: #1eaedb; }
-  .buttercup .head { fill: #56ab2f; stroke: #3e6c21; }
-
-  /* Eyes */
-  .eye-white {
-    fill: white;
-  }
-  .eye-pupil {
-    fill: black;
-    transform-origin: center;
-    animation: blink 5s infinite;
-  }
-  .eye-pupil.right {
-    animation-delay: 2.5s;
-  }
-
-  @keyframes blink {
-    0%, 95%, 100% { transform: scaleY(1); }
-    96%, 98% { transform: scaleY(0.1); }
-  }
-
-  /* Hair styles */
-  .blossom .hair {
-    fill: #e05263;
-  }
-  .bubbles .hair {
-    fill: #1eaedb;
-  }
-  .buttercup .hair {
-    fill: #3e6c21;
-  }
-
-  /* Gallery placeholder */
+  /* Gallery */
   .gallery {
     display: flex;
     justify-content: center;
@@ -222,46 +198,13 @@
 <body>
 
 <h1>Happy Birthday, Vibha! 🎉</h1>
-<p>From your Powerpuff partners-in-crime 💖</p>
+<p class="subtitle">From your Powerpuff partners-in-crime 💖</p>
 
-<!-- Powerpuff Girls -->
+<!-- Powerpuff Girls real images -->
 <div class="ppg-container" aria-label="Powerpuff Girls characters">
-  <!-- Blossom -->
-  <svg class="ppg blossom" viewBox="0 0 140 140" role="img" aria-label="Blossom">
-    <circle class="head" cx="70" cy="70" r="65"/>
-    <!-- Hair bow -->
-    <polygon class="hair" points="70,10 100,45 70,80 40,45" />
-    <!-- Eyes -->
-    <ellipse class="eye-white" cx="40" cy="90" rx="20" ry="25"/>
-    <ellipse class="eye-white" cx="100" cy="90" rx="20" ry="25"/>
-    <ellipse class="eye-pupil left" cx="40" cy="90" rx="10" ry="15"/>
-    <ellipse class="eye-pupil right" cx="100" cy="90" rx="10" ry="15"/>
-  </svg>
-
-  <!-- Bubbles -->
-  <svg class="ppg bubbles" viewBox="0 0 140 140" role="img" aria-label="Bubbles">
-    <circle class="head" cx="70" cy="70" r="65"/>
-    <!-- Hair buns -->
-    <circle class="hair" cx="35" cy="35" r="20"/>
-    <circle class="hair" cx="105" cy="35" r="20"/>
-    <!-- Eyes -->
-    <ellipse class="eye-white" cx="40" cy="90" rx="20" ry="25"/>
-    <ellipse class="eye-white" cx="100" cy="90" rx="20" ry="25"/>
-    <ellipse class="eye-pupil left" cx="40" cy="90" rx="10" ry="15"/>
-    <ellipse class="eye-pupil right" cx="100" cy="90" rx="10" ry="15"/>
-  </svg>
-
-  <!-- Buttercup -->
-  <svg class="ppg buttercup" viewBox="0 0 140 140" role="img" aria-label="Buttercup">
-    <circle class="head" cx="70" cy="70" r="65"/>
-    <!-- Hair spikes -->
-    <polygon class="hair" points="35,35 75,25 115,35 125,65 105,95 135,120 115,130 70,125 30,130 15,115 25,90 0,65" />
-    <!-- Eyes -->
-    <ellipse class="eye-white" cx="40" cy="90" rx="20" ry="25"/>
-    <ellipse class="eye-white" cx="100" cy="90" rx="20" ry="25"/>
-    <ellipse class="eye-pupil left" cx="40" cy="90" rx="10" ry="15"/>
-    <ellipse class="eye-pupil right" cx="100" cy="90" rx="10" ry="15"/>
-  </svg>
+  <div class="ppg" role="img" aria-label="PPG">
+    <img src="https://i.imgur.com/Y3ogGcg.jpeg" alt="PPG face" />
+  </div>
 </div>
 
 <!-- Gallery -->
